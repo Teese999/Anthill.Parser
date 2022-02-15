@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Azure.AI.FormRecognizer" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.FormRecognizer" Version="4.0.0-beta.3" />
+  </ItemGroup>
+</Project>

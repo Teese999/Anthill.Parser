@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Unity" />
+    <None Remove="Azure.AI.FormRecognizer" />
+    <None Remove="Azure.Core" />
+    <None Remove="Microsoft.Identity.Client" />
+    <None Remove="Serilog" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Unity" Version="5.11.10" />
+    <PackageReference Include="Azure.Core" Version="1.22.0" />
+    <PackageReference Include="Azure.AI.FormRecognizer" Version="4.0.0-beta.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Anthill.Parser.Contracts\Anthill.Parser.Contracts.csproj" />
+  </ItemGroup>
+</Project>
