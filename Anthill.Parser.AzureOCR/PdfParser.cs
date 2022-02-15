@@ -46,7 +46,7 @@ namespace Anthill.Parser.AzureOCR
             AnalyzeDocumentOperation operation = null;
             using (FileStream fs = new(path, FileMode.Open))
             {
-                operation = await _client.StartAnalyzeDocumentAsync("a15ee3b4-909b-44b2-addb-aa0e4dfd7da9", fs);
+                operation = await _client.StartAnalyzeDocumentAsync(_settings.ModelId, fs);
             }
 
             await operation.WaitForCompletionAsync();

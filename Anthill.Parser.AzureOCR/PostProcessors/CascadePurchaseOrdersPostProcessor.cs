@@ -5,7 +5,7 @@ using System.Linq;
 using Anthill.Parser.Contracts;
 using Anthill.Parser.Models;
 
-namespace Anthill.Parser.Console.PostProcessors
+namespace Anthill.Parser.AzureOCR.PostProcessors
 {
     public class CascadePurchaseOrdersPostProcessor : IPostProcessor
     {

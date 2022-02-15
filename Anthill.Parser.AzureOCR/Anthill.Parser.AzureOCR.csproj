@@ -10,6 +10,7 @@
     <None Remove="Azure.Core" />
     <None Remove="Microsoft.Identity.Client" />
     <None Remove="Serilog" />
+    <None Remove="PostProcessors\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Unity" Version="5.11.10" />
@@ -18,5 +19,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Anthill.Parser.Contracts\Anthill.Parser.Contracts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PostProcessors\" />
   </ItemGroup>
 </Project>

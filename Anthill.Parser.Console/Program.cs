@@ -23,12 +23,9 @@ namespace Anthill.Parser.Console
         {
             Configure();
 
-            args = new string[1];
-            args[0] = "/Users/teese/Desktop/recognizerPdf/mails";
-            string path = null;
             if (args.Any())
             {
-                path = args[0];
+                string path = args[0];
                 if (Path.GetExtension(path) == "")
                 {
                     FolderPrepare(path);
@@ -37,16 +34,21 @@ namespace Anthill.Parser.Console
                 {
                     FileConvertToPdf(path);
                 }
-            }
-            var parsedDocuments = await _container.Resolve<PdfParser>().StarParseAllPdfs();
 
-            if (_settings.DeleteTempFiles)
-            {
-                File.Delete(_settings.TempDirectoryFullPath);
+                var parsedDocuments = await _container.Resolve<PdfParser>().StarParseAllPdfs();
+
+                if (_settings.DeleteTempFiles)
+                {
+                    File.Delete(_settings.TempDirectoryFullPath);
+                }
+                if (Directory.GetFiles("ConvertException").Length > 0)
+                {
+                    _log.Warning($"Check folder {Path.GetFullPath("ConvertException")} !!!");
+                }
             }
-            if (!Directory.Exists("ConvertException"))
+            else
             {
-                System.Console.WriteLine($"Check folder {Path.GetFullPath("ConvertException")} !!!");
+                Log.Information("No args, Application closed");
             }
         }
 
