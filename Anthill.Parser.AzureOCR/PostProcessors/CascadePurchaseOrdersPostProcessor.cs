@@ -15,26 +15,26 @@ namespace Anthill.Parser.AzureOCR.PostProcessors
             _settings = settings;
         }
 
-        public ParsedDocument ProcessDocuments(ParsedDocument pardesDocument)
+        public ParsedDocument ProcessDocuments(ParsedDocument parsedDocument)
         {
-            if (pardesDocument.NeedHandChek == false)
+            if (parsedDocument.NeedHandChek == false)
             {
-                var poFieldsSplitted = pardesDocument.Fields["PurchaseOrder"].Split(" ").ToList();
+                var poFieldsSplitted = parsedDocument.Fields["PurchaseOrder"].Split(" ").ToList();
                 var orderNumber = poFieldsSplitted.Where(x => x.Any(char.IsDigit)).First();
                 if (orderNumber.Contains("#")) { orderNumber = orderNumber.Replace("#", ""); }
-                var accNumber = string.Concat(pardesDocument.Fields["Account"].Where(char.IsDigit));
-                pardesDocument.Fields["PurchaseOrder"] = orderNumber;
-                pardesDocument.Fields["Account"] = accNumber;
+                var accNumber = string.Concat(parsedDocument.Fields["Account"].Where(char.IsDigit));
+                parsedDocument.Fields["PurchaseOrder"] = orderNumber;
+                parsedDocument.Fields["Account"] = accNumber;
             }
             else
             {
                 if (_settings.CopyHendchakeFilesToFolder)
                 {
-                    File.Copy(pardesDocument.Path, Path.Combine(_settings.HandchackFolderName, Path.GetFileName(pardesDocument.Path)));
+                    File.Copy(parsedDocument.Path, Path.Combine(_settings.HandchackFolderName, Path.GetFileName(parsedDocument.Path)));
                 }
             }
 
-            return pardesDocument;
+            return parsedDocument;
         }
     }
 }

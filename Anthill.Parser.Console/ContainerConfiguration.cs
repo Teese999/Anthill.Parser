@@ -1,7 +1,7 @@
 ﻿using System;
 using Anthill.Parser.AzureOCR;
+using Anthill.Parser.AzureOCR.PostProcessors;
 using Anthill.Parser.Console.Outputs;
-using Anthill.Parser.Console.PostProcessors;
 using Anthill.Parser.Contracts;
 using Anthill.Parser.FileConverter;
 using Unity;

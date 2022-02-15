@@ -8,6 +8,7 @@ using Azure.AI.FormRecognizer.DocumentAnalysis;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Anthill.Parser.Models;
+
 namespace Anthill.Parser.AzureOCR
 {
 
@@ -53,7 +54,7 @@ namespace Anthill.Parser.AzureOCR
 
             AnalyzeResult result = operation.Value;
 
-            return ParsedDocument.Create(_settings, result, path);
+            return CommonService.AzureOCRCreateParsedDocument(_settings, result, path);
 
         }
     }
