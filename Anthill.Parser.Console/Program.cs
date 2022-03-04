@@ -21,7 +21,7 @@ namespace Anthill.Parser.Console
         
         static async Task Main(string[] args)
         {
-            Configure();
+            Configure();           
 
             if (args.Any())
             {
@@ -82,6 +82,10 @@ namespace Anthill.Parser.Console
             if (!Directory.Exists(_settings.TempDirectoryFullPath))
             {
                 Directory.CreateDirectory(_settings.TempDirectoryFullPath);
+            }
+            if (!Directory.Exists("ConvertException"))
+            {
+                Directory.CreateDirectory("ConvertException");
             }
             if (_settings.CopyHendchakeFilesToFolder)
             {

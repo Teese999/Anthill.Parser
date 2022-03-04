@@ -1,10 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using Anthill.Parser.Contracts;
-using PdfSharpCore.Pdf;
 using Syncfusion.HtmlConverter;
 using Unity;
-using Anthill.Parser.AzureOCR;
 using Serilog;
 using shortid.Configuration;
 using shortid;
