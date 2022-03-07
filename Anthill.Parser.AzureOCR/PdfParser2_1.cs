@@ -14,7 +14,7 @@ using Azure.AI.FormRecognizer.Models;
 namespace Anthill.Parser.AzureOCR
 {
 
-    public class PdfParser : IPdfParser
+    public class PdfParser2_1 : IPdfParser
     {
         private AzureKeyCredential _credential;
         private FormRecognizerClient _client;
@@ -23,7 +23,7 @@ namespace Anthill.Parser.AzureOCR
         private Settings _settings;
 
         private List<ParsedDocument> _documents = new();
-        public PdfParser(IUnityContainer container)
+        public PdfParser2_1(IUnityContainer container)
         {
             _container = container;
             _settings = container.Resolve<Settings>();

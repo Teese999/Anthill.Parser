@@ -21,21 +21,23 @@ namespace Anthill.Parser.Console
         
         static async Task Main(string[] args)
         {
-            Configure();           
+            Configure();
+
+            args = new string[1] { "/users/teese/desktop/recognizerpdf/test" };
 
             if (args.Any())
             {
                 string path = args[0];
-                if (Path.GetExtension(path) == "")
-                {
-                    FolderPrepare(path);
-                }
-                else
-                {
-                    FileConvertToPdf(path);
-                }
+                //if (Path.GetExtension(path) == "")
+                //{
+                //    FolderPrepare(path);
+                //}
+                //else
+                //{
+                //    FileConvertToPdf(path);
+                //}
 
-                var parsedDocuments = await _container.Resolve<PdfParser>().StarParseAllPdfs();
+                await _container.Resolve<PdfParser2_1>().StarParseAllPdfs();
 
                 if (_settings.DeleteTempFiles)
                 {

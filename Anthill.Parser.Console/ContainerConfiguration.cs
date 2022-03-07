@@ -16,7 +16,7 @@ namespace Anthill.Parser.Console
       where TLifetime : ITypeLifetimeManager, new()
         {
             container.RegisterType<IHtmlToPdfConverter, HtmlToPdfConverter>(new TLifetime());
-            container.RegisterType<IPdfParser, PdfParser>(new TLifetime());
+            container.RegisterType<IPdfParser, PdfParser3_0>(new TLifetime());
             container.RegisterType<ITxtToHtmlRenamer, TxtToHtmlRenamer>(new TLifetime());
             container.RegisterType<IPostProcessor, CascadePurchaseOrdersPostProcessor>(new TLifetime());
             container.RegisterType<IOutput, ConsoleOutput>(new TLifetime());
